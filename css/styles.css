@@ -45,7 +45,6 @@ li {
 
 header {
   position: relative;
-  width: 100%;
   display: flex;
   justify-content: space-evenly;
   width: inherit;
@@ -63,13 +62,9 @@ header > * {
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0 10px 33px rgb(0 0 0 / 50%);
+  box-shadow: 0 5px 10px rgb(0 0 0 / 50%);
   transition: 1s;
   box-sizing: border-box;
-}
-
-.sticky + .content {
-  padding-top: 102px;
 }
 
 .logo-section {
@@ -128,6 +123,10 @@ nav {
   color: var(--maincolor);
 }
 
+.my-contact-addresses .card4 {
+  display: none;
+}
+
 .social-links-nav a {
   color: var(--maincolor);
 }
@@ -152,6 +151,9 @@ nav {
 }
 
 @media only screen and (max-width: 768px) {
+  header {
+    width: 100%;
+  }
   nav {
     align-items: center;
   }
@@ -162,6 +164,10 @@ nav {
   }
   .social-links-nav {
     display: none;
+  }
+  .my-contact-addresses .card4,
+  .social-links-nav.bottom {
+    display: block;
   }
   .main-nav ul {
     position: fixed;
@@ -182,6 +188,7 @@ nav {
   }
 
   .main-nav li {
+    width: 100%;
     margin: 1rem 0;
   }
   .main-nav .active a {
@@ -242,19 +249,24 @@ section > div:not(.intro-section) > div:first-of-type {
   position: fixed;
   top: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
   z-index: 999;
 }
 
 .theme-mode-container > div {
+  display: flex;
   cursor: pointer;
-  padding: 10px;
+  padding: 20px 10px;
   margin-left: 10px;
+  background-color: var(--maincolor);
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 5px 5px 0;
 }
 
 .theme-mode-container > div i {
   font-size: 24px;
+  color: #fff;
 }
 
 .intro-section {
@@ -763,7 +775,6 @@ footer {
 
 @media (max-width: 768px) {
   .intro-section {
-    margin-top: 50px;
     flex-direction: column;
   }
   .intro-text-container > * {
