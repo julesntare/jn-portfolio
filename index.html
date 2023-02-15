@@ -635,16 +635,21 @@
           <div class="message-error">
             Whoops!!! your message is what we expected most
           </div>
-          <form action="#" method="POST">
+          <form action="#" method="POST" id="contact-form">
             <div class="left-side-inputs">
               <div>
-                <input type="text" name="names" id="names" placeholder="Name" />
+                <input
+                  type="text"
+                  name="from_name"
+                  id="names"
+                  placeholder="Name"
+                />
                 <span id="names-error">!</span>
               </div>
               <div>
                 <input
                   type="email"
-                  name="email"
+                  name="from_email"
                   id="email"
                   placeholder="Email"
                 />
@@ -693,6 +698,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="./js/firebase_configs.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
     <script src="./js/scripts.js"></script>
   </body>
 </html>

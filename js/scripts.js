@@ -1,4 +1,5 @@
 AOS.init();
+emailjs.init("wIMVm0sPdJQlgGwdp");
 // scroll to top
 $(window).scroll(() => {
   if ($(this).scrollTop() > 40) {
@@ -104,14 +105,9 @@ function submitForm(e) {
     document.querySelector(".message-error").style.display = "flex";
     document.querySelector(".message-error").style.backgroundColor = "#212121";
     document.querySelector(".message-error").innerHTML = "Please wait...";
-    db.collection("messages")
-      .add({
-        names: names,
-        email: email,
-        subject: subject,
-        message: message,
-      })
-      .then((ref) => {
+    emailjs
+      .sendForm("service_y2tcurt", "template_91rrdqq", this)
+      .then(function () {
         document.querySelector(".contact-form form").reset();
         document.querySelector(".message-error").style.backgroundColor =
           "#0a3702";
@@ -121,8 +117,8 @@ function submitForm(e) {
           document.querySelector(".message-error").style.display = "none";
         }, 3000);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
         document.querySelector(".message-error").style.backgroundColor =
           "#d6374a";
         document.querySelector(".message-error").innerHTML =
