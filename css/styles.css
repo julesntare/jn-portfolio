@@ -486,6 +486,29 @@ section > div:not(.intro-section) > div:first-of-type {
   padding: 10px;
 }
 
+.works-more {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border: 2px solid var(--maincolor);
+  color: var(--maincolor);
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.view-more-btn:hover {
+  background-color: var(--maincolor);
+  color: #fff;
+}
+
 .project-item {
   display: flex;
   flex-direction: column;
